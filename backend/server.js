@@ -3,7 +3,9 @@ const app = express();
 const chats = require("./data/data");
 require("dotenv").config();
 const PORTNO = process.env.PORT;
+const connectMongo = require("./config/db");
 
+connectMongo();
 app.get("/", (req, res) => {
   res.send("API is working");
 });
